@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zydex/screens/course_overview/course_overview.dart';
 import 'package:zydex/screens/home/homeComponents.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -114,7 +115,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 25.h,
                       ),
-                      HomeComponents().liveConatiner(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CourseOverViewPage()));
+                        },
+                        child: HomeComponents().liveConatiner(),
+                      ),
                     ],
                   ),
                 ),
